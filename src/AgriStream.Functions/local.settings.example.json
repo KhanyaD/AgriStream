@@ -1,0 +1,12 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "StorageConnection": "UseDevelopmentStorage=true",
+    "ConnectionStrings__Sql": "Server=localhost;Database=AgriStream;Trusted_Connection=True;TrustServerCertificate=True;",
+    "TelemetryTable": "telemetry",
+    "AuditTable": "processingaudit",
+    "IrrigationQueue": "irrigation-commands"
+  }
+}

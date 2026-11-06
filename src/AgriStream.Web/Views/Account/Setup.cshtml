@@ -1,0 +1,2 @@
+@model SetupModel
+<section class="card narrow"><p class="eyebrow">FIRST RUN</p><h1>Create administrator</h1><p>This setup is available only while the Azure SQL user table is empty.</p><form asp-action="Setup" method="post"><div asp-validation-summary="ModelOnly" class="validation"></div><label>Username<input asp-for="Username" autocomplete="username"/></label><label>Password (at least 12 characters)<input asp-for="Password" autocomplete="new-password"/></label><button>Create admin account</button></form></section>

@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>0016adea-5e44-42eb-961a-2e056a28f9cf</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.Data.Tables" Version="12.9.1" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.24.0" />
+    <PackageReference Include="Azure.Storage.Queues" Version="12.22.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            </Content>
+          </ItemGroup>
+        </Project>
+
+
+        {
+          "IsEncrypted": false,
+          "Values": {
+            "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+            "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+            "Azure:StorageConnection": "UseDevelopmentStorage=true",
+            "Azure:TelemetryTable": "telemetry",
+            "Azure:AuditTable": "processingaudit",
+            "Azure:BlobContainer": "drone-images",
+            "Azure:IrrigationQueue": "irrigation-commands",
+            "ConnectionStrings:Sql": ""
+          },
+          "Host": {
+            "CORS": "*"
+          }
+        }
+
+
+using Microsoft.Extensions.Hosting;
+
+var host = new HostBuilder()
+    .ConfigureFunctionsWorkerDefaults()
+    .ConfigureAppConfiguration(config =>
+    {
+        config.AddEnvironmentVariables();
+    })
+    .Build();
+host.Run();
+
