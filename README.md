@@ -29,10 +29,10 @@ Telemetry rows are partitioned by farm and use reverse-time RowKeys so the newes
 
 | Brief task | Implementation/evidence |
 |---|---|
-| A — Web hosting | Publish `AgriStream.Web` to Azure App Service. |
-| B — Relational user management | `UserAccounts` SQL table, role-based cookie claims and `database/schema.sql`; screenshot SQL database plus working sign-in. |
-| C — Cloud storage | Private `drone-images` Blob container and `telemetry` Table Storage table. |
-| D — Serverless pipeline | The four trigger types listed above; upload an image, invoke GET/POST, and show Queue-triggered SQL status. |
-| E — Load testing | Run `load_test.py` in page mode and telemetry mode; retain CSV, console metrics, App Insights/Azure Monitor graphs and timestamps. |
+| A Web hosting | Publish `AgriStream.Web` to Azure App Service. |
+| B Relational user management | `UserAccounts` SQL table, role-based cookie claims and `database/schema.sql`; screenshot SQL database plus working sign-in. |
+| C Cloud storage | Private `drone-images` Blob container and `telemetry` Table Storage table. |
+| D Serverless pipeline | The four trigger types listed above; upload an image, invoke GET/POST, and show Queue-triggered SQL status. |
+| E Load testing | Run `load_test.py` in page mode and telemetry mode; retain CSV, console metrics, App Insights/Azure Monitor graphs and timestamps. |
 
 See `docs/DEPLOYMENT.md` before creating resources. Deployment and load testing must be performed in your Azure subscription; this code does not claim those actions have already happened.
