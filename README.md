@@ -1,4 +1,4 @@
-# AgriStream IoT — Section A (Tasks A–E)
+# AgriStream IoT Section A (Tasks A–E)
 
 Standalone ASP.NET Core MVC and Azure Functions solution for the AgriStream brief. It uses Azure App Service, Azure SQL Database, Azure Blob Storage, Azure Table Storage, Azure Queue Storage, and exactly four Azure Functions.
 
